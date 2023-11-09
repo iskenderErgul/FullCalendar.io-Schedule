@@ -12,9 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hours', function (Blueprint $table) {
-            $table->id();
-            $table->string('hour');
+            $table->id('hour_id');
+            $table->string('hour_range');
+            $table->integer('day_id');
             $table->timestamps();
+
+            $table->foreign('day_id')->references('day_id')->on('days');
+
+
         });
     }
 

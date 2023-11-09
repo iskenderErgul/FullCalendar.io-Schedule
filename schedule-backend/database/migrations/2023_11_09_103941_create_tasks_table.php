@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->string('task');
+            $table->id('task_id');
+            $table->string('task_name');
+            $table->integer('hour_id');
             $table->timestamps();
+
+            $table->foreign('hour_id')->references('hour_id')->on('hours');
         });
     }
 

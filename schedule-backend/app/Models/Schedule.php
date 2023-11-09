@@ -10,17 +10,9 @@ class Schedule extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['day_id', 'hour_id', 'task_id'];
-
-    public function day(): BelongsTo
-    {
-        return $this->belongsTo(Day::class, 'day_id');
-    }
-
-    public function hour(): BelongsTo
-    {
-        return $this->belongsTo(Hour::class, 'hour_id');
-    }
+    protected $table = 'Schedule';
+    protected $primaryKey = 'schedule_id';
+    public $timestamps = false;
 
     public function task(): BelongsTo
     {
