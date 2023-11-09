@@ -9,19 +9,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Task extends Model
 {
-    use HasFactory;
-    protected $table = 'Tasks';
     protected $primaryKey = 'task_id';
-    public $timestamps = false;
+    public $timestamps = true;
 
-    public function hour(): BelongsTo
+    public function hour()
     {
         return $this->belongsTo(Hour::class, 'hour_id');
-    }
-
-    public function schedules(): HasMany
-    {
-        return $this->hasMany(Schedule::class, 'task_id');
     }
 
 }

@@ -10,9 +10,8 @@ class Day extends Model
 {
     use HasFactory;
 
-    protected $table = 'Days';
     protected $primaryKey = 'day_id';
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function hours(): HasMany
     {

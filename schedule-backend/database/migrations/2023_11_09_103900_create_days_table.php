@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->id('day_id');
             $table->string('day_name');
+            $table->integer('hour_id');
+            $table->foreign('hour_id')->references('hour_id')->on('hours');
+
             $table->timestamps();
         });
     }

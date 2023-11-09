@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id('task_id');
             $table->string('task_name');
-            $table->integer('hour_id');
             $table->timestamps();
 
-            $table->foreign('hour_id')->references('hour_id')->on('hours');
+
         });
     }
 
