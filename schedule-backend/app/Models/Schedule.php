@@ -14,8 +14,8 @@ class Schedule extends Model
     protected $primaryKey = 'schedule_id';
     public $timestamps = true;
 
-    public function day(): BelongsTo
+    public function tasks(): HasMany
     {
-        return $this->belongsTo(Day::class, 'day_id');
+        return $this->hasMany(Task::class, 'schedule_id');
     }
 }

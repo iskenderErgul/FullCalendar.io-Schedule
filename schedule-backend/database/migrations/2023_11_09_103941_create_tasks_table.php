@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id('task_id');
             $table->string('task_name');
             $table->timestamps();
-
-
         });
     }
 

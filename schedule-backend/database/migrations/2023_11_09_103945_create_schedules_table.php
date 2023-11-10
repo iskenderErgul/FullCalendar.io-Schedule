@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id('schedule_id');
-            $table->unsignedBigInteger('day_id');
-            $table->foreign('day_id')->references('day_id')->on('days');
+            $table->string('day');
             $table->timestamps();
         });
+
     }
 
     /**

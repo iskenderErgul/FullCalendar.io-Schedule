@@ -12,9 +12,9 @@ class Task extends Model
     protected $primaryKey = 'task_id';
     public $timestamps = true;
 
-    public function hour()
+    public function schedule(): BelongsTo
     {
-        return $this->belongsTo(Hour::class, 'hour_id');
+        return $this->belongsTo(Schedule::class, 'schedule_id');
     }
 
 }
