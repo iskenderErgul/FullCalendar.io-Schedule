@@ -9,12 +9,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Task extends Model
 {
-    protected $primaryKey = 'task_id';
+    protected $primaryKey = 'id';
     public $timestamps = true;
 
-    public function schedule(): BelongsTo
+    protected $fillable = [
+        'active', 'week_id', 'title', 'description', 'hours'
+    ];
+
+    protected $casts = [
+        'hours' => 'json',
+    ];
+
+    public function week()
     {
-        return $this->belongsTo(Schedule::class, 'schedule_id');
+        return $this->belongsTo(Week::class, 'week_id');
     }
 
 }

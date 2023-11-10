@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedules', function (Blueprint $table) {
-            $table->id('schedule_id');
-            $table->string('day');
+        Schema::create('weeks', function (Blueprint $table) {
+            $table->id('id');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('week');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -24,7 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('weeks');
     }
 };
-

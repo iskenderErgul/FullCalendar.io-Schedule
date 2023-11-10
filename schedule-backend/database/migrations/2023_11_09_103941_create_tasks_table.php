@@ -12,10 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id('task_id');
-            $table->string('task_name');
+            $table->id('id');
+            $table->enum('active',['0','1'])->default('0');
+            $table->char('week_id');
+            $table->string('title');
+            $table->string('description');
+            $table->json('hours');
             $table->timestamps();
+
+            $table->foreign('week_id')->references('week_id')->on('weeks');
+
         });
+
     }
 
     /**
