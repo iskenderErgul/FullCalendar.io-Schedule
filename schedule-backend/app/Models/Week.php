@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Week extends Model
 {
-    protected $primaryKey = 'id';
-    public $timestamps = true;
-
     protected $fillable = [
         'start_date', 'end_date', 'week'
     ];
@@ -18,5 +15,6 @@ class Week extends Model
     public function tasks(): HasMany
     {
         return $this->hasMany(Task::class, 'week_id');
+
     }
 }
