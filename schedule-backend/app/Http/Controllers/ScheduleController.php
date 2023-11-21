@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddTaskRequest;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use App\Repositories\ScheduleRepository;
-use mysql_xdevapi\Exception;
+
 
 
 class ScheduleController extends Controller
@@ -28,11 +28,20 @@ class ScheduleController extends Controller
             $isThereAnyTask = Task::findOrFail($id);
             if($isThereAnyTask){
                 $task=$this->scheduleRepository->getTask( $id);
+                return  response()->json($task);
             }
         }catch (ModelNotFoundException $e){
             return response()->json(['error' => 'Task not found'], 404);
         }
-        return  response()->json($task);
+    }
+    public  function store(AddTaskRequest $request)
+    {
+        try {
+            $task=$this->scheduleRepository->createTask($request);
+            return  response()->json($task);
 
+        }catch (ModelNotFoundException $e){
+            return response()->json(['error' => 'Task is not added'], 404);
+        }
     }
 }

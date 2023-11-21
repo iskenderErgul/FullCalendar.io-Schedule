@@ -19,12 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/tasks',[ScheduleController::class,'index']);
-
-
 Route::prefix('tasks')->group(function () {
     Route::get('/',[ScheduleController::class,'index']);
     Route::get('/getTask/{id}',[ScheduleController::class,'show']);
-//    Route::post('/addTask',[])
+    Route::post('/addTask',[ScheduleController::class,'store']);
 });
 

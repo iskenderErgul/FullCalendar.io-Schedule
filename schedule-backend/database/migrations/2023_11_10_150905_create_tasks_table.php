@@ -18,7 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('week_id');
             $table->string('title');
             $table->string('description');
-            $table->json('hours');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
 
             $table->foreign('week_id')->references('week_id')->on('weeks');

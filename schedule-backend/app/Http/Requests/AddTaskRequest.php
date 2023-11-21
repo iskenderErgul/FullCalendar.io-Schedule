@@ -11,18 +11,20 @@ class AddTaskRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
+
     public function rules(): array
     {
         return [
-            //
+            'day_number' => 'required|integer|between:1,7',
+            'week_id' => 'required|integer',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
         ];
     }
 }

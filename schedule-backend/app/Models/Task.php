@@ -9,10 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Task extends Model
 {
     protected $fillable = [
-        'active', 'week_id', 'title', 'description', 'hours'
-    ];
-    protected $casts = [
-        'hours' => 'json'
+        'active', 'week_id', 'title', 'description',
+        'start_time' , 'end_time'
     ];
 
 

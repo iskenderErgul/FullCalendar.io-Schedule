@@ -26,7 +26,8 @@ class TaskSeeder extends Seeder
             'week_id' => $week->id,
             'title' => 'Sample Task 1',
             'description' => 'Description for Sample Task 1',
-            'hours' => json_encode(['08:00 - 09:00', '10:00 - 11:00']),
+            'start_time' => '08:00',
+            'end_time' => '09:00'
         ]);
 
         Task::create([
@@ -34,7 +35,8 @@ class TaskSeeder extends Seeder
             'week_id' => $week->id,
             'title' => 'Sample Task 2',
             'description' => 'Description for Sample Task 2',
-            'hours' => json_encode(['13:00 - 14:00', '15:00 - 16:00']),
+            'start_time' => '08:00',
+            'end_time' => '09:00'
         ]);
     }
 }
