@@ -23,5 +23,6 @@ Route::prefix('tasks')->group(function () {
     Route::get('/',[ScheduleController::class,'index']);
     Route::get('/getTask/{id}',[ScheduleController::class,'show']);
     Route::post('/addTask',[ScheduleController::class,'store']);
+    Route::post('/updateTask/{id}',[ScheduleController::class,'update']);
 });
 
