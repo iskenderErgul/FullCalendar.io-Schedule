@@ -124,4 +124,14 @@ class ScheduleRepository
 
         }
     }
+
+    public function deleteTask($id)
+    {
+
+        $task = Task::findOrFail($id);
+        if($task)
+        {
+            return  Task::where('id',$id)->delete();
+        }
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddTaskRequest;
 use App\Http\Requests\EditTaskRequest;
 use App\Models\Task;
+use http\Env\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use App\Repositories\ScheduleRepository;
@@ -55,5 +56,22 @@ class ScheduleController extends Controller
         }catch (ModelNotFoundException $e){
             return response()->json(['error' => 'Task is not updated'], 404);
         }
+    }
+
+
+    public  function destroy($id)
+    {
+
+        $task = Task::findOrFail($id);
+        if($task){
+
+            Task::destroy($id);
+            return response()->json('Task Silindi');
+        }else {
+            return response()->json('Task Bulunamadı');
+        }
+//
+
+
     }
 }
