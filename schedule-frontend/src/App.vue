@@ -15,6 +15,11 @@
       </tbody>
     </table>
   </div>
+  <button
+      @click="updateTask(65)"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+    Button
+  </button>
 </template>
 
 <script>
@@ -33,10 +38,10 @@ export default {
       form : {
           day_number : '2',
           week_id : '1',
-          title : "Ornek Görev 5",
-          description : "Ornek görev 5 açıklaması",
-          start_time : "14:00",
-          end_time : "15:00"
+          title : "Ornek Görev 5sasas",
+          description : "Ornek görev 5sasas açıklaması",
+          start_time : "15:00",
+          end_time : "16:00"
 
         }
 
@@ -83,7 +88,16 @@ export default {
         console.error("API isteği başarısız: ", error);
       }
 
+    },
+    async updateTask(id){
+      try {
+        const response = await axios.put('tasks/updateTask/'+id,this.form);
+        console.log(response);
+      }catch (error) {
+        console.error("API isteği başarısız: ", error);
+      }
     }
+
 
 
   },

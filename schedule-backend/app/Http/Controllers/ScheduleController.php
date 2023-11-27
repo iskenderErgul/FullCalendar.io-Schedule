@@ -47,7 +47,7 @@ class ScheduleController extends Controller
         }
     }
 
-    public function update(EditTaskRequest $request , $id)
+    public function update(EditTaskRequest $request , $id): JsonResponse
     {
 
         try {
