@@ -9,10 +9,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Task extends Model
 {
     protected $fillable = [
-        'title',
+        'active', 'week_id', 'title', 'description',
         'start_time' , 'end_time'
     ];
 
 
+    public function week(): BelongsTo
+    {
+        return $this->belongsTo(Week::class, 'week_id');
 
+    }
 }

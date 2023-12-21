@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->enum('day_number', ['1','2','3','4','5','6','7']);
+
+            $table->unsignedBigInteger('week_id');
             $table->string('title');
+            $table->string('description');
             $table->time('start_time');
             $table->time('end_time');
             $table->timestamps();
 
-
+            $table->foreign('week_id')->references('week_id')->on('weeks');
         });
     }
 

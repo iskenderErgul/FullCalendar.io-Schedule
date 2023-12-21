@@ -61,10 +61,12 @@ class ScheduleRepository
 
         if (!$conflictingTask) {
              return Task::create([
+                'day_number' => $request->day_number,
+                'week_id' => $request->week_id,
                 'title' => $request->title,
+                'description' => $request->description,
                 'start_time' => $start_time,
-                'end_time' => $end_time,
-                 'all_day' => $request->all_day
+                'end_time' => $end_time
                 ]);
         }
 

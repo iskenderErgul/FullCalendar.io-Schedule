@@ -19,7 +19,10 @@ class AddTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'day_number' => 'required|integer|between:1,7',
+            'week_id' => 'required|integer',
             'title' => 'required|string',
+            'description' => 'required|string',
             'start_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i|after:start_time',
         ];
