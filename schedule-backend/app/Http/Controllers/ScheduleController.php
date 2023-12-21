@@ -38,6 +38,7 @@ class ScheduleController extends Controller
     }
     public  function store(AddTaskRequest $request)
     {
+        dd($request->all());
         try {
             $task=$this->scheduleRepository->createTask($request);
             return  response()->json($task);
