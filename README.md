@@ -1,3 +1,53 @@
+# Vue.js FullCalendar Projesi
+
+Bu proje, Vue.js , Laravel  ve FullCalendar kütüphanesi kullanılarak oluşturulmuş basit bir etkinlik takvimi uygulamasını içerir. Kullanıcılar etkinlikleri ekleyebilir, güncelleyebilir, silebilir ve takvimde sürükleyebilirler.
+
+## Kurulum
+
+1. Projeyi bilgisayarınıza klonlayın veya indirin.
+
+```bash
+git clone https://github.com/iskenderErgul/bitirme-projesi-schedule.git
+cd bitirme-projesi-schedule
+````
+
+ 2.Gerekli bağımlılıkları yükleyin.
+```bash
+   composer install
+````
+```bash
+   npm install
+````
+ 3.Laravel veritabanı ayarlarını yapılandırın 
+
+.env dosyasını kopyalayın:
+
+```bash
+   cp .env.example .env
+````
+.env dosyasını açın ve veritabanı bilgilerinizi güncelleyin:
+
+```makefile
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=calendar
+DB_USERNAME=root
+DB_PASSWORD=
+````
+
+4.Veritabanını oluşturun ve tabloları göç edin:
+```bash
+php artisan migrate
+```
+5.Vue.js uygulamasını derleyin ve Laravel uygulamasını başlatın.
+
+```bash
+npm run dev
+php artisan serve
+```
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
