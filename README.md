@@ -52,9 +52,13 @@ Kullanım
 Uygulamayı başlattıktan sonra, tarayıcınızda http://localhost:8000 adresine giderek etkinlik takvimini görebilir ve yönetebilirsiniz. Yeni etkinlik eklemek için formu doldurun, mevcut bir etkinliği güncellemek veya silmek için takvimdeki etkinliğe tıklayın.
 
 Özellikler
+
 Etkinlik ekleme
+
 Etkinlik güncelleme
+
 Etkinlik silme
+
 Etkinlikleri takvimde sürükleme ve boyutlandır
 
 
