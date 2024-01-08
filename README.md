@@ -4,21 +4,23 @@ Bu proje, Vue.js , Laravel  ve FullCalendar kütüphanesi kullanılarak oluştur
 
 ## Kurulum
 
-1. Projeyi bilgisayarınıza klonlayın veya indirin.
+
+ <h3>1. Projeyi bilgisayarınıza klonlayın veya indirin.</h3>
 
 ```bash
 git clone https://github.com/iskenderErgul/bitirme-projesi-schedule.git
 cd bitirme-projesi-schedule
 ````
 
- 2.Gerekli bağımlılıkları yükleyin.
+ <h3> 2.Gerekli bağımlılıkları yükleyin.</h3>
+ 
 ```bash
    composer install
 ````
 ```bash
    npm install
 ````
- 3.Laravel veritabanı ayarlarını yapılandırın 
+ <h3> 3.Laravel veritabanı ayarlarını yapılandırın </h3>
 
 .env dosyasını kopyalayın:
 
@@ -35,12 +37,12 @@ DB_DATABASE=calendar
 DB_USERNAME=root
 DB_PASSWORD=
 ````
+<h3>4.Veritabanını oluşturun ve tabloları göç edin:</h3>
 
-4.Veritabanını oluşturun ve tabloları göç edin:
 ```bash
 php artisan migrate
 ```
-5.Vue.js uygulamasını derleyin ve Laravel uygulamasını başlatın.
+<h3>5.Vue.js uygulamasını derleyin ve Laravel uygulamasını başlatın.</h3>
 
 ```bash
 npm run dev
@@ -51,15 +53,13 @@ Uygulama şimdi http://localhost:8000 adresinde çalışıyor olmalıdır.
 Kullanım
 Uygulamayı başlattıktan sonra, tarayıcınızda http://localhost:8000 adresine giderek etkinlik takvimini görebilir ve yönetebilirsiniz. Yeni etkinlik eklemek için formu doldurun, mevcut bir etkinliği güncellemek veya silmek için takvimdeki etkinliğe tıklayın.
 
-Özellikler
-
-Etkinlik ekleme
-
-Etkinlik güncelleme
-
-Etkinlik silme
-
-Etkinlikleri takvimde sürükleme ve boyutlandır
+<h3>Özellikler<h3>
+<ul>
+ <li>Etkinlik ekleme</li>
+ <li>Etkinlik güncelleme</li>
+ <li>Etkinlik silme</li>
+ <li>Etkinlikleri takvimde sürükleme ve boyutlandır</li>
+</ul>
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
