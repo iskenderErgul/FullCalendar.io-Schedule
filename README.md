@@ -46,6 +46,16 @@ php artisan migrate
 npm run dev
 php artisan serve
 ```
+Uygulama şimdi http://localhost:8000 adresinde çalışıyor olmalıdır.
+
+Kullanım
+Uygulamayı başlattıktan sonra, tarayıcınızda http://localhost:8000 adresine giderek etkinlik takvimini görebilir ve yönetebilirsiniz. Yeni etkinlik eklemek için formu doldurun, mevcut bir etkinliği güncellemek veya silmek için takvimdeki etkinliğe tıklayın.
+
+Özellikler
+Etkinlik ekleme
+Etkinlik güncelleme
+Etkinlik silme
+Etkinlikleri takvimde sürükleme ve boyutlandır
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
