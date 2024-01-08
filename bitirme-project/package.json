@@ -21,6 +21,7 @@
         "@fullcalendar/interaction": "^6.1.10",
         "@fullcalendar/timegrid": "^6.1.10",
         "@fullcalendar/vue3": "^6.1.10",
-        "bootstrap-vue": "^2.23.1"
+        "bootstrap-vue": "^2.23.1",
+        "date-fns": "^3.1.0"
     }
 }
